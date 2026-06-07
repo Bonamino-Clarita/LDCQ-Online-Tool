@@ -187,7 +187,7 @@
                     <td class="num">1.</td>
                     <td>…maintain lucidity without waking up?</td>
                     <td class="score">
-                        <input class="score-input domain-score" type="text" name="q1">
+                        <input class="score-input domain-score" type="text" name="own-cognition-q1">
                     </td>
                 </tr>
 
@@ -195,7 +195,7 @@
                     <td class="num">2.</td>
                     <td>…remember a pre-set intention while lucid in a dream?</td>
                     <td class="score">
-                        <input class="score-input domain-score" type="text" name="q2">
+                        <input class="score-input domain-score" type="text" name="own-cognition-q2">
                     </td>
                 </tr>
 
@@ -203,7 +203,7 @@
                     <td class="num">3.</td>
                     <td>…prolong a lucid dream when it starts to fade or feel unstable?</td>
                     <td class="score">
-                        <input class="score-input domain-score" type="text" name="q3">
+                        <input class="score-input domain-score" type="text" name="own-cognition-q3">
                     </td>
                 </tr>
 
@@ -211,7 +211,7 @@
                     <td class="num">4.</td>
                     <td>…remain focused on a chosen goal or task without getting distracted?</td>
                     <td class="score">
-                        <input class="score-input domain-score" type="text" name="q4">
+                        <input class="score-input domain-score" type="text" name="own-cognition-q4">
                     </td>
                 </tr>
 
@@ -219,7 +219,7 @@
                     <td class="num">5.</td>
                     <td>…prevent losing lucidity or waking up before completing a desired action or intention?</td>
                     <td class="score">
-                        <input class="score-input domain-score" type="text" name="q5">
+                        <input class="score-input domain-score" type="text" name="own-cognition-q5">
                     </td>
                 </tr>
                 <tr>
@@ -227,14 +227,14 @@
                     <td>…experience dream control without major distractions or instability (e.g., struggling to exert
                         control, being distracted by the dream and dream characters)?</td>
                     <td class="score">
-                        <input class="score-input domain-score" type="text" name="q6">
+                        <input class="score-input domain-score" type="text" name="own-cognition-q6">
                     </td>
                 </tr>
                 <tr>
                     <td class="num">7.</td>
                     <td>…regain focus or control when distractions or instability occur?</td>
                     <td class="score">
-                        <input class="score-input domain-score" type="text" name="q7">
+                        <input class="score-input domain-score" type="text" name="own-cognition-q7">
                     </td>
                 </tr>
             </tbody>
@@ -254,7 +254,8 @@
                         <em>Exclude the “N.A.” questions</em>
                     </td>
                     <td class="box">
-                        <input id="total-domain-score" class="calc-input" type="text" readonly>
+                        <input class="calc-input total-domain-score" type="text" readonly>
+                        <!--<input id="total-domain-score" class="calc-input" type="text" readonly> -->
                     </td>
                 </tr>
 
@@ -265,7 +266,7 @@
                         <em>Exclude the “N.A.” questions</em>
                     </td>
                     <td class="box">
-                        <input id="questions-answered" class="calc-input" type="text" readonly>
+                        <input id="questions-answered" class="calc-input questions-answered" type="text" readonly>
                     </td>
                 </tr>
 
@@ -276,7 +277,7 @@
                         <em>Total Domain Score ÷ (No. Questions Answered x 4)</em>
                     </td>
                     <td class="big-box">
-                        <input id="control-score" class="calc-input thick-input" type="text" readonly>
+                        <input id="control-score" class="calc-input thick-input control-score" type="text" readonly>
                     </td>
                 </tr>
             </tbody>
@@ -295,7 +296,7 @@
                         Number of Questions NOT Marked as "N.A."<br>
                     </td>
                     <td class="box">
-                        <input id="non-na-count" class="calc-input" type="text" readonly>
+                        <input id="non-na-count" class="calc-input non-na-count" type="text" readonly>
                     </td>
                 </tr>
 
@@ -306,7 +307,7 @@
                         <em>No. of non-"N.A" questions ÷ 7</em>
                     </td>
                     <td class="big-box">
-                        <input id="engagement-score" class="calc-input thick-input" type="text" readonly>
+                        <input id="engagement-score" class="calc-input thick-input engagement-score" type="text" readonly>
                     </td>
                 </tr>
             </tbody>
@@ -315,67 +316,870 @@
 
         <div class="nav-buttons">
             <button type="button" class="back-button">Back</button>
-            <button type="button" class="next-button">Next</button>
+            <button type="button" class="next-button" disabled>Next</button>
         </div>
     </section>
 
     <!-- PAGE 3: OWN EMOTION -->
     <section class="page questionnaire" data-domain="own-emotion">
         <!-- Own Emotion table here -->
+         <h2>Own Emotion Control</h2>
+        This set of questions assess your ability to deliberately manage fear, anxiety, excitement, and other emotions to sustain dream lucidity and control. Please rete each of the following on a scale from 0-4 where:
+        <div class="center">
+            Never = 0; Rarely = 1; Sometimes = 2; Often = 3; Always = 4
+        </div>
+        If have never attempted a particular type of dream control) mark it as “N.A.”.
+        <table class="score-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="2" class="question-heading">
+                        How often can you deliberately and successfully…
+                    </th>
+                    <th class="score-heading">Your Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="num">1.</td>
+                    <td>...remain calm and collected in an overwhelming, stressful, or particularly exciting dream scenarios?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-emotion-q1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">2.</td>
+                    <td>...remove an element that induces fear, stress, or other unwanted emotions?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-emotion-q2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">3.</td>
+                    <td>...change your emotional state (e.g., induce joy or relaxation)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-emotion-q3">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">4.</td>
+                    <td>...maintain lucidity and control when experiencing strong emotions (e.g., excitement, fear, frustration)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-emotion-q4">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Total Domain Score<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="total-domain-score" class="calc-input total-domain-score" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions Answered<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="questions-answered" class="calc-input questions-answered" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Own Cognition Dream Control Score</strong><br>
+                        <em>Total Domain Score ÷ (No. Questions Answered x 4)</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="control-score" class="calc-input thick-input control-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions NOT Marked as "N.A."<br>
+                    </td>
+                    <td class="box">
+                        <input id="non-na-count" class="calc-input non-na-count" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Own Cognition Dream Engagement Score</strong><br>
+                        <em>No. of non-"N.A" questions ÷ 4</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="engagement-score" class="calc-input thick-input engagement-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="nav-buttons">
             <button type="button" class="back-button">Back</button>
-            <button type="button" class="next-button">Next</button>
+            <button type="button" class="next-button" disabled>Next</button>
         </div>
     </section>
 
     <!-- PAGE 4: OWN BODY -->
     <section class="page questionnaire" data-domain="own-body">
         <!-- Own Body table here -->
+         <h2>Own Body Control</h2>
+        This set of questions assesses your ability to deliberately control your dream body. This refers to your capacity to change the form, proprioception, and senses of your dream body. Please rete each of the following on a scale from 0-4 where:
+        <div class="center">
+            Never = 0; Rarely = 1; Sometimes = 2; Often = 3; Always = 4
+        </div>
+        If have never attempted a particular type of dream control, mark it as “N.A.”.
+        <table class="score-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="2" class="question-heading">
+                        How often can you deliberately and successfully…
+                    </th>
+                    <th class="score-heading">Your Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="num">1.</td>
+                    <td>...modify your dream body (e.g., change size, shape, or abilities)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-body-q1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">2.</td>
+                    <td>...shapeshift or transform into another being (e.g., animal, plant, person, fictional character) or inanimate object?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-body-q2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">3.</td>
+                    <td>...change your emotional state (e.g., induce joy or relaxation)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-body-q3">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">4.</td>
+                    <td>...disable or alter your visual perception (e.g., black and white vision, looking through binoculars)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-body-q4">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="num">5.</td>
+                    <td>...disable or alter your auditory perception (e.g., make sounds feel louder or softer)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-body-q5">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="num">6.</td>
+                    <td>...alter other sensory perception (e.g., intensity or quality of smell, taste, or touch)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-body-q6">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Total Domain Score<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="total-domain-score" class="calc-input total-domain-score" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions Answered<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="questions-answered" class="calc-input questions-answered" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Own Cognition Dream Control Score</strong><br>
+                        <em>Total Domain Score ÷ (No. Questions Answered x 4)</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="control-score" class="calc-input thick-input control-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions NOT Marked as "N.A."<br>
+                    </td>
+                    <td class="box">
+                        <input id="non-na-count" class="calc-input non-na-count" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Own Cognition Dream Engagement Score</strong><br>
+                        <em>No. of non-"N.A" questions ÷ 5</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="engagement-score" class="calc-input thick-input engagement-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="nav-buttons">
             <button type="button" class="back-button">Back</button>
-            <button type="button" class="next-button">Next</button>
+            <button type="button" class="next-button" disabled>Next</button>
         </div>
     </section>
 
     <!-- PAGE 5: OWN MOVEMENT -->
     <section class="page questionnaire" data-domain="own-movement">
         <!-- Own Movement table here -->
+         <h2>Dream Character Control</h2>
+        This set of questions assesses your ability to deliberately summon, communicate with, or modify dream characters (including humans, animals, or other beings). Please rete each of the following on a scale from 0-4 where:
+        <div class="center">
+            Never = 0; Rarely = 1; Sometimes = 2; Often = 3; Always = 4
+        </div>
+        If have never attempted a particular type of dream control, mark it as “N.A.”.
+        <table class="score-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="2" class="question-heading">
+                        How often can you deliberately and successfully...
+                    </th>
+                    <th class="score-heading">Your Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="num">1.</td>
+                    <td>...summon or remove a specific dream character?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-movement-q1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">2.</td>
+                    <td>...alter the appearance of a dream character (e.g., change their clothes, height, hair, or other physical features)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-movement-q2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">3.</td>
+                    <td>...alter the behaviour of a dream character (e.g., ordering them to complete an action or behave in a specific way)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-movement-q3">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">4.</td>
+                    <td>...have a casual conversation with a dream character (e.g., exchanging greetings or small talk)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-movement-q4">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="num">5.</td>
+                    <td>...have a deep conversation with a dream character (e.g., seeking life advice, new knowledge, solving a problem)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="own-movement-q5">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Total Domain Score<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="total-domain-score" class="calc-input total-domain-score" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions Answered<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="questions-answered" class="calc-input questions-answered" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Characters Control Score</strong><br>
+                        <em>Total Domain Score ÷ (No. Questions Answered x 4)</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="control-score" class="calc-input thick-input control-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions NOT Marked as "N.A."<br>
+                    </td>
+                    <td class="box">
+                        <input id="non-na-count" class="calc-input non-na-count" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Characters Engagement Score</strong><br>
+                        <em>No. of non-"N.A" questions ÷ 4</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="engagement-score" class="calc-input thick-input engagement-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="nav-buttons">
             <button type="button" class="back-button">Back</button>
-            <button type="button" class="next-button">Next</button>
+            <button type="button" class="next-button" disabled>Next</button>
         </div>
     </section>
 
     <!-- PAGE 6: DREAM CHARACTERS -->
     <section class="page questionnaire" data-domain="dream-characters">
         <!-- Dream Characters table here -->
+         <h2>Dream Character Control</h2>
+        This set of questions assesses your ability to deliberately summon, communicate with, or modify dream characters (including humans, animals, or other beings). Please rete each of the following on a scale from 0-4 where:
+        <div class="center">
+            Never = 0; Rarely = 1; Sometimes = 2; Often = 3; Always = 4
+        </div>
+        If have never attempted a particular type of dream control, mark it as “N.A.”.
+        <table class="score-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="2" class="question-heading">
+                        How often can you deliberately and successfully...
+                    </th>
+                    <th class="score-heading">Your Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="num">1.</td>
+                    <td>...summon or remove a specific dream character?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-characters-q1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">2.</td>
+                    <td>...alter the appearance of a dream character (e.g., change their clothes, height, hair, or other physical features)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-characters-q2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">3.</td>
+                    <td>...alter the behaviour of a dream character (e.g., ordering them to complete an action or behave in a specific way)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-characters-q3">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">4.</td>
+                    <td>...have a casual conversation with a dream character (e.g., exchanging greetings or small talk)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-characters-q4">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="num">5.</td>
+                    <td>...have a deep conversation with a dream character (e.g., seeking life advice, new knowledge, solving a problem)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-characters-q4">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Total Domain Score<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="total-domain-score" class="calc-input total-domain-score" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions Answered<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="questions-answered" class="calc-input questions-answered" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Characters Control Score</strong><br>
+                        <em>Total Domain Score ÷ (No. Questions Answered x 4)</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="control-score" class="calc-input thick-input control-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions NOT Marked as "N.A."<br>
+                    </td>
+                    <td class="box">
+                        <input id="non-na-count" class="calc-input non-na-count" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Characters Engagement Score</strong><br>
+                        <em>No. of non-"N.A" questions ÷ 4</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="engagement-score" class="calc-input thick-input engagement-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="nav-buttons">
             <button type="button" class="back-button">Back</button>
-            <button type="button" class="next-button">Next</button>
+            <button type="button" class="next-button" disabled>Next</button>
         </div>
     </section>
 
     <!-- PAGE 7: DREAM ENVIRONMENT -->
     <section class="page questionnaire" data-domain="dream-environment">
         <!-- Dream Environment table here -->
+         <h2>Dream Environment Control</h2>
+        This set of questions assesses your ability to deliberately to alter settings, objects, and spatial continuity within a lucid dream. Please rete each of the following on a scale from 0-4 where:
+        <div class="center">
+            Never = 0; Rarely = 1; Sometimes = 2; Often = 3; Always = 4
+        </div>
+        If have never attempted a particular type of dream control, mark it as “N.A.”.
+        <table class="score-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="2" class="question-heading">
+                        How often can you deliberately and successfully...
+                    </th>
+                    <th class="score-heading">Your Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="num">1.</td>
+                    <td>...travel to another location by actively changing your surroundings (e.g., teleporting, using a portal, turning around, turning corners)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-environment-q1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">2.</td>
+                    <td>...alter the weather or climate (e.g., making it rain or snow)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-environment-q2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">3.</td>
+                    <td>...create or remove objects (e.g., trees, buildings, specific elements of your surroundings)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-environment-q3">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">4.</td>
+                    <td>...control the lighting (e.g., make the dream space brighter or darker, changing the hue/color?)</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-environment-q4">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Total Domain Score<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="total-domain-score" class="calc-input total-domain-score" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions Answered<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="questions-answered" class="calc-input questions-answered" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Environment Control Score</strong><br>
+                        <em>Total Domain Score ÷ (No. Questions Answered x 4)</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="control-score" class="calc-input thick-input control-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions NOT Marked as "N.A."<br>
+                    </td>
+                    <td class="box">
+                        <input id="non-na-count" class="calc-input non-na-count" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Environment Engagement Score</strong><br>
+                        <em>No. of non-"N.A" questions ÷ 4</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="engagement-score" class="calc-input thick-input engagement-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="nav-buttons">
             <button type="button" class="back-button">Back</button>
-            <button type="button" class="next-button">Next</button>
+            <button type="button" class="next-button" disabled>Next</button>
         </div>
     </section>
 
     <!-- PAGE 8: DREAM PHYSICS -->
     <section class="page questionnaire" data-domain="dream-physics">
         <!-- Dream Physics table here -->
+         <h2>Dream Physics Control</h2>
+        This set of questions assesses your ability to deliberately summon, communicate with, or modify dream characters (including humans, animals, or other beings). Please rete each of the following on a scale from 0-4 where:
+        <div class="center">
+            Never = 0; Rarely = 1; Sometimes = 2; Often = 3; Always = 4
+        </div>
+        If have never attempted a particular type of dream control, mark it as “N.A.”.
+        <table class="score-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="2" class="question-heading">
+                        How often can you deliberately and successfully...
+                    </th>
+                    <th class="score-heading">Your Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="num">1.</td>
+                    <td>...alter the passage of time (e.g., speed up, slow down, pause, rewind)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-physics-q1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">2.</td>
+                    <td>...modify gravity (e.g., making objects, yourself, or others float or fly, reducing or increasing gravity)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-physics-q2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">3.</td>
+                    <td>...switch viewpoint (e.g., from first-person to observer perspective)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-physics-q3">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="num">4.</td>
+                    <td>...pass through solid objects or walls?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-physics-q4">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="num">5.</td>
+                    <td>...change the fundamental properties of objects or your surroundings (e.g., density, solidity)?</td>
+                    <td class="score">
+                        <input class="score-input domain-score" type="text" name="dream-physics-q5">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Total Domain Score<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="total-domain-score" class="calc-input total-domain-score" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions Answered<br>
+                        <em>Exclude the “N.A.” questions</em>
+                    </td>
+                    <td class="box">
+                        <input id="questions-answered" class="calc-input questions-answered" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Physics Control Score</strong><br>
+                        <em>Total Domain Score ÷ (No. Questions Answered x 4)</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="control-score" class="calc-input thick-input control-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="calc-table aligned-table">
+            <colgroup>
+                <col class="num-col">
+                <col class="text-col">
+                <col class="score-col">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        Number of Questions NOT Marked as "N.A."<br>
+                    </td>
+                    <td class="box">
+                        <input id="non-na-count" class="calc-input non-na-count" type="text" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="label">
+                        <strong>Dream Physics Engagement Score</strong><br>
+                        <em>No. of non-"N.A" questions ÷ 5</em>
+                    </td>
+                    <td class="big-box">
+                        <input id="engagement-score" class="calc-input thick-input engagement-score" type="text" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="nav-buttons">
             <button type="button" class="back-button">Back</button>
-            <button type="button" class="next-button">Finish</button>
+            <button type="button" class="next-button" disabled>Finish</button>
         </div>
     </section>
 

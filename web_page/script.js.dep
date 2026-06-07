@@ -2,6 +2,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const pages = Array.from(document.querySelectorAll(".page"));
   let currentPage = 0;
 
+  function showPage(index) {
+    if (index < 0 || index >= pages.length) return;
+
+    pages.forEach((page) => {
+      page.classList.remove("active");
+    });
+
+    pages[index].classList.add("active");
+    currentPage = index;
+    window.scrollTo(0, 0);
+  }
+
+  document.querySelectorAll(".next-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      showPage(currentPage + 1);
+    });
+  });
+
+  document.querySelectorAll(".back-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      showPage(currentPage - 1);
+    });
+  });
+
   function isNA(value) {
     const cleaned = value.trim().toLowerCase();
 
@@ -15,79 +39,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function isValidScore(value) {
-    const cleaned = value.trim();
+    if (value.trim() === "") return true;
+    if (isNA(value)) return true;
 
-    if (cleaned === "") return false;
-    if (isNA(cleaned)) return true;
-
-    const score = Number(cleaned);
+    const score = Number(value);
     return Number.isInteger(score) && score >= 0 && score <= 4;
   }
-
-  function showPage(index) {
-    if (index < 0 || index >= pages.length) return;
-
-    pages.forEach((page) => {
-      page.classList.remove("active");
-    });
-
-    pages[index].classList.add("active");
-    currentPage = index;
-    window.scrollTo(0, 0);
-
-    updateNextButtonState(pages[index]);
-  }
-
-  function updateNextButtonState(page) {
-    if (!page.classList.contains("questionnaire")) return;
-
-    const nextButton = page.querySelector(".next-button");
-    const inputs = page.querySelectorAll(".domain-score");
-
-    if (!nextButton) return;
-
-    const allFilled = Array.from(inputs).every((input) => {
-      return isValidScore(input.value);
-    });
-
-    nextButton.disabled = !allFilled;
-  }
-
-  document.querySelectorAll(".next-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.disabled) return;
-      showPage(currentPage + 1);
-    });
-  });
-
-  document.querySelectorAll(".back-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      showPage(currentPage - 1);
-    });
-  });
 
   function calculateQuestionnaire(questionnaire) {
     const scoreInputs = questionnaire.querySelectorAll(".domain-score");
 
-    const totalDomainScoreInput = questionnaire.querySelector(
-      ".total-domain-score, #total-domain-score"
-    );
-
-    const questionsAnsweredInput = questionnaire.querySelector(
-      ".questions-answered, #questions-answered"
-    );
-
-    const controlScoreInput = questionnaire.querySelector(
-      ".control-score, #control-score"
-    );
-
-    const nonNaCountInput = questionnaire.querySelector(
-      ".non-na-count, #non-na-count"
-    );
-
-    const engagementScoreInput = questionnaire.querySelector(
-      ".engagement-score, #engagement-score"
-    );
+    const totalDomainScoreInput = questionnaire.querySelector(".total-domain-score");
+    const questionsAnsweredInput = questionnaire.querySelector(".questions-answered");
+    const controlScoreInput = questionnaire.querySelector(".control-score");
+    const nonNaCountInput = questionnaire.querySelector(".non-na-count");
+    const engagementScoreInput = questionnaire.querySelector(".engagement-score");
 
     let totalDomainScore = 0;
     let questionsAnswered = 0;
@@ -97,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       input.classList.remove("input-error");
 
-      if (value !== "" && !isValidScore(value)) {
+      if (!isValidScore(value)) {
         input.classList.add("input-error");
         return;
       }
@@ -123,31 +89,25 @@ document.addEventListener("DOMContentLoaded", () => {
         : "";
 
     if (totalDomainScoreInput) {
-      totalDomainScoreInput.value =
-        questionsAnswered > 0 ? totalDomainScore : "";
+      totalDomainScoreInput.value = questionsAnswered > 0 ? totalDomainScore : "";
     }
 
     if (questionsAnsweredInput) {
-      questionsAnsweredInput.value =
-        questionsAnswered > 0 ? questionsAnswered : "";
+      questionsAnsweredInput.value = questionsAnswered > 0 ? questionsAnswered : "";
     }
 
     if (controlScoreInput) {
-      controlScoreInput.value =
-        controlScore === "" ? "" : controlScore.toFixed(2);
+      controlScoreInput.value = controlScore === "" ? "" : controlScore.toFixed(2);
     }
 
     if (nonNaCountInput) {
-      nonNaCountInput.value =
-        questionsAnswered > 0 ? questionsAnswered : "";
+      nonNaCountInput.value = questionsAnswered > 0 ? questionsAnswered : "";
     }
 
     if (engagementScoreInput) {
       engagementScoreInput.value =
         engagementScore === "" ? "" : engagementScore.toFixed(2);
     }
-
-    updateNextButtonState(questionnaire);
   }
 
   const questionnaires = document.querySelectorAll(".questionnaire");

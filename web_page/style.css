@@ -246,3 +246,8 @@ td {
   outline: 2px solid red !important;
   outline-offset: -2px;
 }
+
+.nav-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
