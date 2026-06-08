@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
     currentPage = index;
     window.scrollTo(0, 0);
 
+    const mainTitle = document.getElementById("main-title");
+
+    if (mainTitle) {
+      if (pages[index].classList.contains("results-page")) {
+        mainTitle.style.display = "none";
+      } else {
+        mainTitle.style.display = "block";
+      }
+    }
+
     updateNextButtonState(pages[index]);
 
     if (pages[index].classList.contains("results-page")) {
