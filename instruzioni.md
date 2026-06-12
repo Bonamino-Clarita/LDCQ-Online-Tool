@@ -10,7 +10,5 @@ Clona il repository tramite
 git clone https://github.com/LucaBonamino/questionnaire.git
 cd questionnaire
 ```
-Non sono sicuro che questo comando funzioni visto che il repository è privato e non hai un account GitHub.
-In caso vediamo e te ti insio in codice separatamente
 
 Una volta che hai il codice apri `index.html` sul browser in qualsiasi modo: vai sul file gli dai "open with" o dal teminale scrivi `open web_page/index.html`.
