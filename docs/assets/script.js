@@ -288,12 +288,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const thead = document.createElement("thead");
     thead.innerHTML = `
-    <tr>
-      <th>Domain</th>
-      <th>Engagement</th>
-      <th>Control</th>
-    </tr>
-  `;
+      <tr>
+        <th>Domain</th>
+        <th>Engagement</th>
+        <th>Control</th>
+      </tr>
+    `;
 
     const tbody = document.createElement("tbody");
 
@@ -301,10 +301,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const row = document.createElement("tr");
 
       row.innerHTML = `
-      <td>${item.label}</td>
-      <td>${item.engagement.toFixed(2)}</td>
-      <td>${item.control.toFixed(2)}</td>
-    `;
+        <td>${item.label}</td>
+        <td>${item.engagement.toFixed(2)}</td>
+        <td>${item.control.toFixed(2)}</td>
+      `;
 
       tbody.appendChild(row);
     });
@@ -314,7 +314,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return table;
   }
-
 
   function renderSpiderChart() {
     const container = document.getElementById("spider-chart");
@@ -343,7 +342,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "aria-label": "Dream Control Profile radar chart"
     });
 
-    // Title
     const title = createSvgElement("text", {
       x: centerX,
       y: 45,
@@ -362,7 +360,6 @@ document.addEventListener("DOMContentLoaded", () => {
     subtitle.textContent = "Engagement and Control";
     svg.appendChild(subtitle);
 
-    // Legend
     svg.appendChild(
       createSvgElement("circle", {
         cx: centerX - 170,
@@ -397,7 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
     controlLegend.textContent = "Control";
     svg.appendChild(controlLegend);
 
-    // Grid
     for (let level = 1; level <= levels; level++) {
       const value = level / levels;
 
@@ -417,7 +413,6 @@ document.addEventListener("DOMContentLoaded", () => {
       svg.appendChild(grid);
     }
 
-    // Axis lines
     labels.forEach((label, index) => {
       const angle = -Math.PI / 2 + (index * 2 * Math.PI) / labels.length;
 
@@ -436,7 +431,6 @@ document.addEventListener("DOMContentLoaded", () => {
       svg.appendChild(axis);
     });
 
-    // Tick labels
     for (let level = 0; level <= levels; level++) {
       const value = level / levels;
       const y = centerY - radius * value;
@@ -451,7 +445,6 @@ document.addEventListener("DOMContentLoaded", () => {
       svg.appendChild(tick);
     }
 
-    // Engagement polygon
     const engagementPolygon = createSvgElement("polygon", {
       points: pointsForValues(engagementValues, centerX, centerY, radius),
       fill: "rgba(190, 190, 190, 0.55)",
@@ -461,7 +454,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     svg.appendChild(engagementPolygon);
 
-    // Control polygon
     const controlPolygon = createSvgElement("polygon", {
       points: pointsForValues(controlValues, centerX, centerY, radius),
       fill: "rgba(80, 80, 80, 0.55)",
@@ -471,7 +463,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     svg.appendChild(controlPolygon);
 
-    // Labels around chart
     labels.forEach((label, index) => {
       const angle = -Math.PI / 2 + (index * 2 * Math.PI) / labels.length;
       const labelRadius = radius + 70;
@@ -500,8 +491,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chartWrapper.appendChild(resultsTable);
 
     container.appendChild(chartWrapper);
-
-    container.appendChild(svg);
   }
 
   showPage(0);
