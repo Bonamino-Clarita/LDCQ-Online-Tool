@@ -152,27 +152,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (totalDomainScoreInput) {
       totalDomainScoreInput.value =
-        questionsAnswered > 0 ? totalDomainScore : "";
+        questionsAnswered > 0 ? totalDomainScore : 0;
     }
 
     if (questionsAnsweredInput) {
       questionsAnsweredInput.value =
-        questionsAnswered > 0 ? questionsAnswered : "";
+        questionsAnswered > 0 ? questionsAnswered : 0;
     }
 
     if (controlScoreInput) {
       controlScoreInput.value =
-        controlScore === "" ? "" : controlScore.toFixed(2);
+        controlScore === "" ? 0 : controlScore.toFixed(2);
     }
 
     if (nonNaCountInput) {
       nonNaCountInput.value =
-        questionsAnswered > 0 ? questionsAnswered : "";
+        questionsAnswered > 0 ? questionsAnswered : 0;
     }
 
     if (engagementScoreInput) {
       engagementScoreInput.value =
-        engagementScore === "" ? "" : engagementScore.toFixed(2);
+        engagementScore === "" ? 0 : engagementScore.toFixed(2);
     }
 
     updateNextButtonState(questionnaire);
